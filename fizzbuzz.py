@@ -114,7 +114,7 @@ def answer(g):
     # column of rp (rp[0]).  Once we have the number of paths to a preimage, we
     # no longer need that preimages' left column. In the code below we store
     # rp's right column (rp[1]) for use in the next loop iteration but we do
-    # not store not rp's left column.
+    # not store rp's left column.
     for rcol in g[1:]:
         rcounts = {}
 
@@ -192,7 +192,8 @@ def answer(g):
 # of the num of comb that lead to preimage j in bit 4 for all preimage j
 # that preimage i has valid overlap with.
 # However, when computing the number of paths to a preimage of bit 6, we'd
-# have to recompute paths to preimages in bit 5.
+# have to recompute paths to preimages in bit 5 (which I think renders this
+# method useless).
 #
 # It seems much easier to just list preimages for each column and then
 # to count the number of valid combinations of those.
